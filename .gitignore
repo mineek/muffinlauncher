@@ -1,0 +1,7 @@
+.DS_Store
+build/
+muffinlauncher
+.muffinlauncher/
+logs/
+*.png
+*.log

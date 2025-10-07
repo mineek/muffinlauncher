@@ -116,6 +116,7 @@ int main(int argc, char* argv[]) {
     }
 
     // perform fixup for arm64 macOS and old mc
+    if (vi.javaVersion.majorVersion < 9) {
     VersionInfo::Library libJavaObjC;
     libJavaObjC.name = "ca.weblite:java-objc-bridge:1.1.0-mmachina.1";
     libJavaObjC.artifact.url = "https://github.com/MinecraftMachina/Java-Objective-C-Bridge/releases/download/1.1.0-mmachina.1/java-objc-bridge-1.1.jar";
@@ -194,6 +195,7 @@ int main(int argc, char* argv[]) {
             // std::cout << " - Replacing com.mojang:text2speech" << std::endl;
             lib.artifact.url = "https://libraries.minecraft.net/com/mojang/text2speech/1.11.3/text2speech-1.11.3.jar";
         }
+    }
     }
 
     if (shouldInjectForge) {

@@ -27,7 +27,7 @@ bool downloadFileEasy(const std::string& url, std::string& outContent, bool quie
                 }
             }
 
-            std::string cachePath = cacheDir + filename;
+            std::string cachePath = cacheDir + std::to_string(std::hash<std::string>{}(url)) + "_" + filename;
             if (std::filesystem::exists(cachePath)) {
                 if (!quiet) {
                     std::cout << "   - Used cache " << cachePath << std::endl;
